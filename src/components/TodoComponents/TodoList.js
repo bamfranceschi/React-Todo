@@ -8,7 +8,11 @@ function ToDoList(props) {
   return (
     <div>
       {props.toDo.map(i => (
-        <ToDoItem key={i.id} i={i} />
+        <ToDoItem
+          key={i.id}
+          i={i}
+          handleCompleteClick={props.handleCompleteClick}
+        />
       ))}
     </div>
   );

@@ -20,6 +20,11 @@ class ToDoForm extends React.Component {
     });
   };
 
+  onClick = e => {
+    e.preventDefault();
+    this.props.handleClearComplete(this.props.i);
+  };
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -31,7 +36,7 @@ class ToDoForm extends React.Component {
           onChange={this.handleInput}
         ></input>
         <button onClick={this.handleSubmit}>Add ToDo</button>
-        <button>Clear Completed</button>
+        <button onClick={this.onClick}>Clear Completed</button>
       </form>
     );
   }
